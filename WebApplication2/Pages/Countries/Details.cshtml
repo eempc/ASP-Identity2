@@ -1,0 +1,43 @@
+﻿@page
+@model WebApplication2.Pages.Countries.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Country</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Country.LongName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Country.LongName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Country.ShortName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Country.ShortName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Country.Continent)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Country.Continent)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Country.TwoLetterCode)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Country.TwoLetterCode)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Country.Id">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

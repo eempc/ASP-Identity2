@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -8,6 +8,9 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.EntityFrameworkCore;
+using WebApplication2.Data;
+using WebApplication2.Models;
 
 namespace WebApplication2 {
     public class Startup {
@@ -19,7 +22,11 @@ namespace WebApplication2 {
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services) {
+            services.AddScoped<ICountry, Country>();
             services.AddRazorPages();
+
+    services.AddDbContext<WebApplication2CountryContext>(options =>
+            options.UseSqlServer(Configuration.GetConnectionString("WebApplication2CountryContext")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

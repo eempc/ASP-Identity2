@@ -140,3 +140,8 @@ D:\Projects\ASPIdentityTest\WebApplication2\WebApplication2\obj\Debug\netcoreapp
 D:\Projects\ASPIdentityTest\WebApplication2\WebApplication2\obj\Debug\netcoreapp3.0\Razor\Areas\Identity\Pages\_ViewStart.cshtml.g.cs
 D:\Projects\ASPIdentityTest\WebApplication2\WebApplication2\obj\Debug\netcoreapp3.0\Razor\Pages\Shared\_CookieConsentPartial.cshtml.g.cs
 D:\Projects\ASPIdentityTest\WebApplication2\WebApplication2\obj\Debug\netcoreapp3.0\Razor\Pages\Shared\_LoginPartial.cshtml.g.cs
+D:\Projects\ASPIdentityTest\WebApplication2\WebApplication2\obj\Debug\netcoreapp3.0\Razor\Pages\Countries\Create.cshtml.g.cs
+D:\Projects\ASPIdentityTest\WebApplication2\WebApplication2\obj\Debug\netcoreapp3.0\Razor\Pages\Countries\Delete.cshtml.g.cs
+D:\Projects\ASPIdentityTest\WebApplication2\WebApplication2\obj\Debug\netcoreapp3.0\Razor\Pages\Countries\Details.cshtml.g.cs
+D:\Projects\ASPIdentityTest\WebApplication2\WebApplication2\obj\Debug\netcoreapp3.0\Razor\Pages\Countries\Edit.cshtml.g.cs
+D:\Projects\ASPIdentityTest\WebApplication2\WebApplication2\obj\Debug\netcoreapp3.0\Razor\Pages\Countries\Index.cshtml.g.cs
