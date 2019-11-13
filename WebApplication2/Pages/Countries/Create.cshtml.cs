@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -15,6 +16,7 @@ namespace WebApplication2.Pages.Countries
     public class CreateModel : PageModel
     {
         private readonly WebApplication2.Data.WebApplication2CountryContext _context;
+        public string userId; // Declare the user ID in order to assign it later
 
         public CreateModel(WebApplication2.Data.WebApplication2CountryContext context)
         {
@@ -23,6 +25,7 @@ namespace WebApplication2.Pages.Countries
 
         public IActionResult OnGet()
         {
+            userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value; // Initialise user ID, then can use it in the CSHMTL file
             return Page();
         }
 

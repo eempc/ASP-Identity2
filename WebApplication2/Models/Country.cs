@@ -15,5 +15,6 @@ namespace WebApplication2.Models {
         public string Continent { get; set; }
         [Required, Display(Name = "Country two letter code")]
         public string TwoLetterCode { get; set; }
+        public string UserID { get; set; } // User ID of the person who added, it's a string (a hash function)
     }
 }
