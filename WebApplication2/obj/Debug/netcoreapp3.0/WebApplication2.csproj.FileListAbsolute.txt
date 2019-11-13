@@ -145,3 +145,4 @@ D:\Projects\ASPIdentityTest\WebApplication2\WebApplication2\obj\Debug\netcoreapp
 D:\Projects\ASPIdentityTest\WebApplication2\WebApplication2\obj\Debug\netcoreapp3.0\Razor\Pages\Countries\Details.cshtml.g.cs
 D:\Projects\ASPIdentityTest\WebApplication2\WebApplication2\obj\Debug\netcoreapp3.0\Razor\Pages\Countries\Edit.cshtml.g.cs
 D:\Projects\ASPIdentityTest\WebApplication2\WebApplication2\obj\Debug\netcoreapp3.0\Razor\Pages\Countries\Index.cshtml.g.cs
+D:\Projects\ASPIdentityTest\WebApplication2\WebApplication2\obj\Debug\netcoreapp3.0\Razor\Pages\Contact.cshtml.g.cs
