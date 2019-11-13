@@ -15,13 +15,12 @@ namespace WebApplication2.Pages {
 
 
         public string testString = "Hello World";
-        private string password;
 
         [BindProperty]
         public ContactFormModel Contact { get; set; }
 
         public void OnGet() {
-            
+
         }
 
         public async Task<IActionResult> OnPostAsync() {
@@ -29,10 +28,8 @@ namespace WebApplication2.Pages {
                 return Page();
             }
 
-            password = Password.password;
-
-            MailAddress fromAddress = new MailAddress("evctestemail@gmail.com", "No Reply");
-            MailAddress toAddress = new MailAddress("evc776@gmail.com", "Evelyn Cheng");
+            MailAddress fromAddress = new MailAddress(Password.fromEmail, Password.fromName);
+            MailAddress toAddress = new MailAddress(Password.toEmail, Password.toName);
 
             SmtpClient smtp = new SmtpClient {
                 Host = "smtp.gmail.com",
@@ -40,7 +37,7 @@ namespace WebApplication2.Pages {
                 EnableSsl = true,
                 DeliveryMethod = SmtpDeliveryMethod.Network,
                 UseDefaultCredentials = false,
-                Credentials = new NetworkCredential(fromAddress.Address, password)
+                Credentials = new NetworkCredential(fromAddress.Address, Password.password)
             };
 
             using MailMessage msg = new MailMessage(fromAddress, toAddress) {
@@ -48,7 +45,8 @@ namespace WebApplication2.Pages {
                 Body = $"Message is from: {Contact.Name} of email: {Contact.Email} and it says the following {Contact.Message}"
             };
 
-            smtp.Send(msg);
+            await smtp.SendMailAsync(msg);
+            msg.Dispose();
             smtp.Dispose();
 
             return RedirectToPage("Index");
@@ -56,20 +54,20 @@ namespace WebApplication2.Pages {
 
         public async Task SendEmailAsync(MailAddress sendFrom, MailAddress sendTo, string subject, string body) {
 
-}
+        }
     }
 
     public class SendMail {
 
-}
+    }
 
 
-public class ContactFormModel {
-    [Required]
-    public string Name { get; set; }
-    [Required]
-    public string Email { get; set; }
-    [Required]
-    public string Message { get; set; }
-}
+    public class ContactFormModel {
+        [Required]
+        public string Name { get; set; }
+        [Required]
+        public string Email { get; set; }
+        [Required]
+        public string Message { get; set; }
+    }
 }
